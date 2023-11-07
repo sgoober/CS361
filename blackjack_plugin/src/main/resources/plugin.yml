@@ -1,0 +1,12 @@
+name: untitled
+version: '${project.version}'
+main: blackjack.blackjack.Blackjack
+api-version: '1.20'
+commands:
+  blackjackstart:
+    description: Summons blackjack game for command sender. 
+      Visit "spigotmc.org/resources/blackjack" for FAQ and information on how to play.
+    usage: /blackjackstart
+    aliases: ["blackjack", "start"]
+
+
