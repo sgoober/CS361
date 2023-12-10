@@ -4,6 +4,7 @@ import blackjack.blackjack.commands.blackjackstart;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
+
 public final class Blackjack extends JavaPlugin {
 
     @Override
@@ -16,15 +17,16 @@ public final class Blackjack extends JavaPlugin {
         Bukkit.getLogger().info("Reason: Potential security exploit bug fixed");
         Bukkit.getLogger().info("To download latest version, Visit: spigotmc.org/resources/blackjack");
         Bukkit.getLogger().info("*****************************");
-        getCommand("blackjackstart").setExecutor(new blackjackstart());
+        getCommand("blackjackstart").setExecutor(new blackjackstart(this));
         Bukkit.getScheduler().runTaskLater(this, () -> {
             Bukkit.broadcastMessage("Use '/blackjackstart' to start game.\nUse /help blackjackstart for help and additional information.");
         }, 1200L);
-    }
 
+
+    }
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-        Bukkit.getLogger().info("aw shit");
+        Bukkit.getLogger().info("blackjack closing");
     }
 }
